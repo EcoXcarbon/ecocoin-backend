@@ -1,0 +1,9 @@
+{
+  "name": "ecobot-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@vercel/node": "^2.3.0",
+    "firebase-admin": "^12.0.0"
+  }
+}

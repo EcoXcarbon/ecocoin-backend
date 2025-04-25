@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ecocoin-bot",
+  "private_key_id": "ff57965af6fa21098dea6fd791423cbaab0446ae",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDJ63YzGBq0sbI3\nxaxd0wwCizkMHyHpswMYuC28hmNqP11vCJj3vbNp4efSaZVQWteO6HNPLdJkkz7i\nG1R0VRDrb1XNnkr0meh4hGlXs+Fm74kL9z2CfcireP/ZGBTHdklNjMkH/H2zidlE\np53MnDWT7Qdt2DsvHl90t2Pzr+4oRDJrY+YrQ18FOkNG4w9FZWbrMPCgSw/9Kk4e\nWFgYdYQJzPa6gRobzVueSzdX5k+1M3DUHyvJm6gFQZykvgRFk2pg/vFhLwd4T1EL\nJcjBUx1iYK6cIdaq4WZ9W36F3LoG4wdV08fAXDWDarxDv+j5i34NPBXvM64jOkfE\nLXU9ozCjAgMBAAECggEAK2A8I4y9i+ySUt3RgdRJA7Dhv+NeNyRf+WrzVEjwSU40\nZZpMtgeX55qCYNaSn1DsdoQj5TH8POPOwebKFTWC7Xicz49+HZ6EbINRV+hJ9wFl\nCN+DZKldtsxG9d1w9UpJQ/IG64LHhA6MUG3Lfb1e2xiznFqzmBMnwVx2Cc7U0+w0\nLNz/R2SD8hcHMgk+GUVaxsIvWEpzbekdkPg24oPkO2lDVrAYC8RqI9NDL4yYiAHw\nG6/gtlXRSLhtCZOciL6mULe1Me/BolGD9ibURZK8R0HwG7Vvn4VBqAujzU0AwX2L\nyvUKlEV6jgsqIm7R4Amg5MFoZi6MYt41Dsn97su6rQKBgQD/Mvx5SvFehOE8x9Hb\nBb8tVb/SvDOZO/Ovl/XI3XoH4c/Jxun9cluWAHau4BcGrw8Nggj/xX9Mx57S/QlB\n0LvOCwOaMSvvlJTIZYYgV6dR8x95Pqria+loX4qD96zqkp1d+xe1sdC8IhzUrbiC\ndSsCpARt7vP1em69Eny0g1XKlwKBgQDKjaxwbJD3VbdnKPffJf4tzHLMADnDdyZt\nUXJtboTpzs6MQzfaI58tr9fOUwcnQ5OWr/8y1xZV3eUEcXFsUpSoMa/FPfpkH6Qy\n8/aM4mSUp/mab9RW/l+ExVHXN2Pg5tCwe37mVArFzlbWtbJeHBV5r4dMXMApOjfM\n1BfcG3SH1QKBgFXCxKXeUY76CNdsL1HzdHO/xV8EcDKmuxXfc3G1PDU55aJhfnD1\n5WFbdob+N76/Rce8U1ng/Q7IZs9wyZOcmgB8IxHGRIWW4QkXVSO5UTlxArq0HKlK\nqn2w3dPLgAi0jL3wi987inIu5JF0b/UnevTAOdzX2JQ+OMjBVbc0C7ixAoGAe17R\nMeSeY1d9DsNAPlVYvLJzFVfp1ulCqYDbLlYLdJE28u2aHi5mLKCW1B90EvEw+q4V\nxPSGsSQm8o7aI70kuFETGxMF6GfxTeuUNvlJg9XPzMXiUl469ZZto6UkG37aizOc\n9lMoAJUOBVbD3lhCqExGHze6/yFrjUF9it3aG0UCgYAT/Tw0uwboQJYbMAvTms/0\ncDUVNJCHgYwjPwEBYursO3rRAoKsuZ46PDeoQ+4Rf3jCseGwYBPBkYiCphER8lhz\nzJl7KckiURtbEoMlmJbWaJvVvuCRGBGXtz6Fr8qBvYiDW9qtupcjZY8U1xwcVseX\njgsSOV6Bq+2/90leIfDfig==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@ecocoin-bot.iam.gserviceaccount.com",
+  "client_id": "105946602175680353207",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40ecocoin-bot.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
