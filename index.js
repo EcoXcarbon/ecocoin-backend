@@ -1,18 +1,19 @@
-import express from 'express';
-import submitHandler from './api/submit.js';
-import adminHandler from './api/admin.js';
+import express from "express";
+import helloRouter from "./api/hello.js"; // <<--- This line is very important
 
 const app = express();
 app.use(express.json());
 
-app.post('/api/submit', submitHandler);
-app.post('/api/admin', adminHandler);
+// ✅ Correct route mounting
+app.use('/api/hello', helloRouter);
 
-app.get('/', (req, res) => {
-  res.send('✅ Ecocoin backend is live!');
+// Default homepage route
+app.get("/", (req, res) => {
+  res.send("✅ Welcome to EcoCoin Backend is Live!");
 });
 
+// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
+  console.log(`✅ EcoCoin Backend running on port ${PORT}`);
 });
