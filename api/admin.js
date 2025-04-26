@@ -1,10 +1,10 @@
 import { db } from './firebaseAdmin.js';
-import { getDocs, collection, updateDoc, doc } from 'firebase-admin/firestore';
+import { getDocs, updateDoc } from 'firebase-admin/firestore';
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      const snap = await getDocs(collection(db, 'ecoContributions'));
+      const snap = await db.collection('ecoContributions').get();
       const data = snap.docs.map((doc) => ({
         id: doc.id,
         ...doc.data()
@@ -17,15 +17,15 @@ export default async function handler(req, res) {
 
   if (req.method === 'PATCH') {
     try {
-      const body = req.body || (await parseBody(req));
+      const body = req.body;
       const { id, ecoPoints, verified, adminNote } = body;
 
       if (!id || ecoPoints === undefined) {
         return res.status(400).json({ success: false, message: 'Missing fields' });
       }
 
-      const contributionRef = doc(db, 'ecoContributions', id);
-      await updateDoc(contributionRef, {
+      const contributionRef = db.collection('ecoContributions').doc(id);
+      await contributionRef.update({
         ecoPoints,
         verified: verified ?? true,
         adminNote: adminNote || '',
