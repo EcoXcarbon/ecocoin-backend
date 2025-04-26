@@ -1,19 +1,23 @@
+// index.js
+
 import express from "express";
-import helloRouter from "./api/hello.js"; // <<--- This line is very important
+import hello from "./api/hello.js";
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware to parse JSON
 app.use(express.json());
 
-// ✅ Correct route mounting
-app.use('/api/hello', helloRouter);
-
-// Default homepage route
+// Health check route
 app.get("/", (req, res) => {
-  res.send("✅ Welcome to EcoCoin Backend is Live!");
+  res.send("✅ EcoCoin Backend is live!");
 });
 
+// Connect hello route
+app.post("/api/hello", hello);
+
 // Start server
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`✅ EcoCoin Backend running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
