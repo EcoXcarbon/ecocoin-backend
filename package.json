@@ -2,10 +2,12 @@
   "name": "ecocoin-backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "echo '✅ No server needed for Railway, using serverless functions!'"
+    "start": "node index.js"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "firebase-admin": "^11.10.0"
   }
 }
