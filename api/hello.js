@@ -1,8 +1,10 @@
-// backend/api/hello.js
-import express from 'express';
-const router = express.Router();
+// /api/hello.js
 
-router.post('/', async (req, res) => {
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Only POST requests allowed" });
+  }
+
   try {
     const { userId, referredCode } = req.body;
 
@@ -15,6 +17,4 @@ router.post('/', async (req, res) => {
     console.error("Referral error:", err);
     return res.status(500).json({ error: "Server error" });
   }
-});
-
-export default router;
+}
