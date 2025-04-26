@@ -1,26 +1,20 @@
-import express from 'express';
+// api/hello.js
+import express from "express";
+
 const router = express.Router();
 
-router.post('/', async (req, res) => {
-  try {
-    const { userId, referredCode } = req.body;
-
-    // Validate required fields
-    if (!userId || !referredCode) {
-      return res.status(400).json({ error: "Missing required fields" });
-    }
-
-    // Example: Validate userId format (optional)
-    if (typeof userId !== 'string') {
-      return res.status(400).json({ error: "Invalid userId format" });
-    }
-
-    // Success response
-    res.status(200).json({ message: "Referral captured", points: 50 });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Server error" });
+router.post("/", (req, res) => {
+  const { userId, referredCode } = req.body;
+  
+  if (!userId || !referredCode) {
+    return res.status(400).json({ status: "error", message: "Missing fields" });
   }
+
+  res.status(200).json({
+    status: "success",
+    message: "Hello API working!",
+    data: { userId, referredCode },
+  });
 });
 
-export default router; // Export the router
+export default router;
