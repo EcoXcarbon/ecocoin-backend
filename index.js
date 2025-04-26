@@ -6,18 +6,19 @@ import testRouter from "./api/test.js";
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// Middlewares
 app.use(express.json());
 
-// Health Check
+// API Routes
+app.use("/api/hello", helloRouter);
+app.use("/api/test", testRouter);
+
+// Health check route
 app.get("/", (req, res) => {
   res.send("✅ EcoCoin Backend is Live!");
 });
 
-// Routes
-app.use("/api/hello", helloRouter);
-app.use("/api/test", testRouter);
-
-// Start Server
+// Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
