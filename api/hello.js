@@ -1,3 +1,5 @@
+// backend/api/hello.js
+
 import express from "express";
 const router = express.Router();
 
@@ -9,8 +11,7 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
-    // Example success response
-    res.status(200).json({ message: "Referral captured", points: 50 });
+    res.status(200).json({ message: "Referral captured successfully", points: 50 });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Server error" });
