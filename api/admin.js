@@ -1,5 +1,6 @@
 import { db } from './firebaseAdmin.js';
-import { getDocs, collection, updateDoc, doc } from 'firebase/firestore';
+import { getFirestore, getDocs, collection, updateDoc, doc } from 'firebase-admin/firestore';
+
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
