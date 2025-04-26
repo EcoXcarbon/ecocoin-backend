@@ -1,5 +1,4 @@
 import { db } from './firebaseAdmin.js';
-import { getDocs, updateDoc } from 'firebase-admin/firestore';
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -17,8 +16,7 @@ export default async function handler(req, res) {
 
   if (req.method === 'PATCH') {
     try {
-      const body = req.body;
-      const { id, ecoPoints, verified, adminNote } = body;
+      const { id, ecoPoints, verified, adminNote } = req.body;
 
       if (!id || ecoPoints === undefined) {
         return res.status(400).json({ success: false, message: 'Missing fields' });
