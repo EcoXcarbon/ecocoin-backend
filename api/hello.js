@@ -1,8 +1,9 @@
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Only POST requests allowed" });
-  }
+// api/hello.js
 
+import express from "express";
+const router = express.Router();
+
+router.post("/", async (req, res) => {
   try {
     const { userId, referredCode } = req.body;
 
@@ -15,4 +16,6 @@ export default async function handler(req, res) {
     console.error("Referral error:", err);
     return res.status(500).json({ error: "Server error" });
   }
-}
+});
+
+export default router;

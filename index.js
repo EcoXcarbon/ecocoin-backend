@@ -6,11 +6,11 @@ import helloHandler from "./api/hello.js";
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Middlewares
+// Middleware
 app.use(express.json());
 
-// API Route
-app.use("/api/hello", helloHandler);
+// Correct API Route
+app.post("/api/hello", helloHandler);
 
 // Health check route
 app.get("/", (req, res) => {
