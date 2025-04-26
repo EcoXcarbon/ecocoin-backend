@@ -1,5 +1,9 @@
-// api/test.js (new file)
-module.exports = (req, res) => {
-  console.log("TEST ENDPOINT HIT");
-  res.status(200).json({ success: true });
-}
+// api/test.js
+import express from "express";
+const router = express.Router();
+
+router.get("/", (req, res) => {
+  res.send("✅ Test API is working fine!");
+});
+
+export default router;
