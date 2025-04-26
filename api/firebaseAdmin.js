@@ -1,3 +1,5 @@
+// api/firebaseAdmin.js
+
 import { initializeApp, cert, getApps } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 
@@ -12,11 +14,11 @@ try {
   try {
     serviceAccount = JSON.parse(process.env.FIREBASE_ADMIN_KEY);
   } catch (parseError) {
-    throw new Error('❌ Malformed Firebase Admin Key - Invalid JSON format');
+    throw new Error('❌ Malformed FIREBASE_ADMIN_KEY - Invalid JSON format');
   }
 
   if (!serviceAccount.project_id || !serviceAccount.private_key) {
-    throw new Error('❌ Invalid Firebase Admin Key - Missing essential fields');
+    throw new Error('❌ Invalid FIREBASE_ADMIN_KEY - Missing required fields');
   }
 
   if (!getApps().length) {
@@ -28,23 +30,22 @@ try {
 
   db = getFirestore();
 
-  // ✅ No await here — using .then() promise instead
+  // Test Firestore connection (optional, but nice for debugging)
   db.listCollections()
     .then(() => {
-      console.log('✅ Firebase DB connected successfully.');
+      console.log('✅ Firebase Firestore connected successfully.');
     })
     .catch((err) => {
-      console.error('❌ Firebase DB connection test failed:', err.message);
+      console.error('❌ Firestore connection test failed:', err.message);
       process.exit(1);
     });
 
 } catch (error) {
-  console.error('🔥 Critical Firebase Initialization Failure:', {
+  console.error('🔥 Firebase Admin Initialization Failed:', {
     message: error.message,
     stack: error.stack,
     envKeyExists: !!process.env.FIREBASE_ADMIN_KEY
   });
-  
   process.exit(1);
 }
 
