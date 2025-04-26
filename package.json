@@ -1,9 +1,12 @@
 {
-  "name": "ecobot-backend",
+  "name": "ecocoin-backend",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
-    "@vercel/node": "^2.3.0",
+    "express": "^4.21.2",
     "firebase-admin": "^12.0.0"
   }
 }
