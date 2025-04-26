@@ -1,12 +1,14 @@
 import { db } from './firebaseAdmin.js';
-import { getFirestore, getDocs, collection, updateDoc, doc } from 'firebase-admin/firestore';
-
+import { getDocs, collection, updateDoc, doc } from 'firebase-admin/firestore';
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
       const snap = await getDocs(collection(db, 'ecoContributions'));
-      const data = snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      const data = snap.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+      }));
       return res.status(200).json({ success: true, contributions: data });
     } catch (err) {
       return res.status(500).json({ success: false, error: err.message });
@@ -29,20 +31,11 @@ export default async function handler(req, res) {
         adminNote: adminNote || '',
       });
 
-      return res.status(200).json({ success: true, message: 'Updated successfully' });
+      return res.status(200).json({ success: true });
     } catch (err) {
       return res.status(500).json({ success: false, error: err.message });
     }
   }
 
-  return res.status(405).json({ success: false, message: 'Method not allowed' });
-}
-
-async function parseBody(req) {
-  const chunks = [];
-  for await (const chunk of req) {
-    chunks.push(chunk);
-  }
-  const raw = Buffer.concat(chunks).toString('utf8');
-  return JSON.parse(raw);
+  return res.status(405).end(); // Method Not Allowed
 }
