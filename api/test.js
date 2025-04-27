@@ -1,9 +1,10 @@
-// api/test.js
 import express from "express";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("✅ Test API is working fine!");
+  res.status(200).json({
+    message: "Test API working!",
+  });
 });
 
 export default router;
